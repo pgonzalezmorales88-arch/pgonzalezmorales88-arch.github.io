@@ -1,236 +1,229 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio de Paulina</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Paulina</title>
 
-<style>
-    /* ------------------------------
-       ESTILOS GENERALES
-    ------------------------------ */
-    body {
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        background: #eaf6ee;
-        color: #2d402f;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #e8f5ec;
+            color: #1b3a28;
+        }
 
-    /* Fondo suave decorado */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: url("https://images.unsplash.com/photo-1482192596544-9eb780fc7f66") center/cover no-repeat;
-        filter: brightness(0.35) blur(3px);
-        z-index: -1;
-    }
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #2d8054;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    /* ------------------------------
-       MENÚ SUPERIOR
-    ------------------------------ */
-    header {
-        background: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(5px);
-        padding: 15px;
-        text-align: center;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-    }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-    header a {
-        margin: 0 15px;
-        color: #1f5f2c;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 18px;
-    }
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-    header a:hover {
-        color: #52b46e;
-    }
+        /* Header */
+        header {
+            background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1500&q=80') center/cover;
+            padding: 100px 20px;
+            color: white;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
 
-    /* ------------------------------
-       HERO INICIO
-    ------------------------------ */
-    .hero {
-        text-align: center;
-        padding: 70px 20px;
-        color: white;
-    }
+        header h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
 
-    .hero h1 {
-        font-size: 40px;
-        margin-bottom: 10px;
-    }
+        header p {
+            font-size: 22px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
-    .hero p {
-        font-size: 20px;
-    }
+        /* Secciones */
+        section {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
 
-    /* ------------------------------
-       SECCIONES GENERALES
-    ------------------------------ */
-    section {
-        background: rgba(255, 255, 255, 0.8);
-        margin: 30px auto;
-        padding: 30px;
-        width: 90%;
-        max-width: 900px;
-        border-radius: 15px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #2d6040;
+            font-weight: 600;
+        }
 
-    h2 {
-        color: #1f5f2c;
-        text-align: center;
-    }
+        /* Grid estilo Behance */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
-    /* ------------------------------
-       GALERÍA
-    ------------------------------ */
-    .galeria {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-        margin-top: 20px;
-    }
+        .card {
+            background: #f4faf5;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid #d6ead8;
+            transition: .3s;
+        }
 
-    .galeria img {
-        width: 100%;
-        border-radius: 10px;
-        height: 180px;
-        object-fit: cover;
-        transition: transform .3s;
-    }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
 
-    .galeria img:hover {
-        transform: scale(1.05);
-    }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
-    /* ------------------------------
-       TARJETAS DE TRABAJOS
-    ------------------------------ */
-    .trabajos-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-    }
+        .card-info {
+            padding: 15px;
+        }
 
-    .trabajo {
-        padding: 20px;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        text-align: center;
-        font-size: 16px;
-    }
+        .card-info h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #244d36;
+        }
 
-    .trabajo a {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 8px 15px;
-        background: #1f5f2c;
-        color: white;
-        text-decoration: none;
-        border-radius: 10px;
-    }
+        .card-info p {
+            font-size: 14px;
+            margin-top: 5px;
+            color: #456e57;
+        }
 
-    .trabajo a:hover {
-        background: #52b46e;
-    }
+        /* Decoración */
+        .decor {
+            width: 90px;
+            position: absolute;
+            opacity: .8;
+        }
 
-    /* ------------------------------
-       FOOTER
-    ------------------------------ */
-    footer {
-        text-align: center;
-        padding: 20px;
-        color: white;
-        margin-top: 40px;
-    }
+        .flores { top: 20px; left: 20px; }
+        .carrito { bottom: 20px; right: 20px; }
+        .bosque { bottom: -15px; left: 50px; }
 
-</style>
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            background: #2d8054;
+            color: white;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- MENÚ -->
-<header>
-    <a href="#inicio">Inicio</a>
-    <a href="#sobre">Sobre mí</a>
-    <a href="#galeria">Galería</a>
-    <a href="#trabajos">Mis trabajos</a>
-    <a href="#contacto">Contacto</a>
-</header>
+    <!-- Decoraciones -->
+    <img src="https://cdn-icons-png.flaticon.com/512/7658/7658929.png" class="decor flores">
+    <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" class="decor bosque">
+    <img src="https://cdn-icons-png.flaticon.com/512/3665/3665909.png" class="decor carrito">
 
-<!-- HERO -->
-<div id="inicio" class="hero">
-    <h1>🌿✨ Bienvenid@ a mi portafolio ✨🌿</h1>
-    <p>Un espacio donde combino naturaleza, autos y diseño.</p>
-</div>
-
-<!-- SOBRE MÍ -->
-<section id="sobre">
-    <h2>Sobre mí</h2>
-    <p>
-        Hola! Soy <b>Paulina</b>. Me encantan los bosques, los carros, las flores y todo lo que 
-        tenga vibes verdes. Aquí subo mis trabajos, tareas y proyectos de diseño.
-    </p>
-</section>
-
-<!-- GALERÍA -->
-<section id="galeria">
-    <h2>Galería</h2>
-    <div class="galeria">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Bosque">
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Auto">
-        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f" alt="Flores">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Naturaleza">
-        <img src="https://images.unsplash.com/photo-1493238792000-8113da705763" alt="Flores 2">
-        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Montaña">
-    </div>
-</section>
-
-<!-- MIS TRABAJOS -->
-<section id="trabajos">
-    <h2>Mis Trabajos</h2>
-    <p>Aquí iré subiendo mis proyectos y tareas 👇</p>
-
-    <div class="trabajos-grid">
-        <div class="trabajo">
-            <b>Trabajo 1</b>
-            <p>Sube aquí tu primer link.</p>
-            <a href="#">Ver</a>
+    <!-- Navegación -->
+    <nav>
+        <h2>Paulina 🌿</h2>
+        <div>
+            <a href="#about">Sobre mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
         </div>
+    </nav>
 
-        <div class="trabajo">
-            <b>Trabajo 2</b>
-            <p>Sube aquí tu segundo proyecto.</p>
-            <a href="#">Ver</a>
+    <!-- Header -->
+    <header>
+        <h1>Mi Portafolio Creativo 🌱</h1>
+        <p>Diseño, proyectos, tareas y todo lo que voy creando ✨</p>
+    </header>
+
+    <!-- Sobre mí -->
+    <section id="about">
+        <h2 class="section-title">Sobre mí</h2>
+        <p>
+            ¡Hola! Soy Paulina ✨  
+            Bienvenida a mi portafolio tipo Behance versión estética verde, naturaleza, flores y carritos bonitos.  
+            Aquí subo mis tareas, proyectos de diseño, trabajos de la escuela y cualquier cosa creativa que vaya haciendo.  
+        </p>
+    </section>
+
+    <!-- Proyectos estilo Behance -->
+    <section id="proyectos">
+        <h2 class="section-title">Mis Proyectos 🎨</h2>
+        <p>Cuando subas tus archivos a GitHub, aparecerán aquí tus trabajos reales.</p>
+
+        <div class="galeria">
+
+            <!-- EJEMPLO 1 -->
+            <div class="card">
+                <img src="assets/proyecto1.png" alt="">
+                <div class="card-info">
+                    <h3>Proyecto 1</h3>
+                    <p>Descripción breve de tu trabajo.</p>
+                </div>
+            </div>
+
+            <!-- EJEMPLO 2 -->
+            <div class="card">
+                <img src="assets/proyecto2.jpg" alt="">
+                <div class="card-info">
+                    <h3>Proyecto 2</h3>
+                    <p>Poster, portada o tarea.</p>
+                </div>
+            </div>
+
+            <!-- EJEMPLO 3 -->
+            <div class="card">
+                <img src="assets/proyecto3.png" alt="">
+                <div class="card-info">
+                    <h3>Proyecto 3</h3>
+                    <p>Ilustración, diseño o actividad.</p>
+                </div>
+            </div>
+
         </div>
+    </section>
 
-        <div class="trabajo">
-            <b>Trabajo 3</b>
-            <p>Lo que quieras poner aquí.</p>
-            <a href="#">Ver</a>
-        </div>
-    </div>
-</section>
+    <!-- Contacto -->
+    <section id="contacto">
+        <h2 class="section-title">Contacto 📩</h2>
+        <p>Si quieres ver más de mi trabajo o contactar conmigo:</p>
+        <ul>
+            <li>Email: paulina@example.com</li>
+            <li>Instagram: @tuusuario</li>
+            <li>GitHub: Tu perfil</li>
+        </ul>
+    </section>
 
-<!-- CONTACTO -->
-<section id="contacto">
-    <h2>Contacto</h2>
-    <p>Si quieres escribirme, aquí estoy 💚</p>
-    <p>Email: <b>tucorreo@example.com</b></p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    © 2025 - Portafolio creado por Paulina 🌿💚
-</footer>
+    <footer>
+        Hecho con 💚 por Paulina — 2025
+    </footer>
 
 </body>
 </html>
